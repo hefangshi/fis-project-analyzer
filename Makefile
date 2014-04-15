@@ -1,31 +1,26 @@
 TESTS = test/cases/*.js
-TESTTIMEOUT = 1000
 REPORTER = spec
-MOCHA_OPTS = 
+TIMEOUT = 10000
+MOCHA_OPTS =
 
-install:
-    @npm install --registry=http://registry.cnpmjs.org
-
-test: install
+test:
     @NODE_ENV=test ./node_modules/.bin/mocha \
-        -R $(REPORTER) \
-        --timeout $(TESTTIMEOUT) \
+        --reporter $(REPORTER) \
+        --timeout $(TIMEOUT) \
         $(MOCHA_OPTS) \
         $(TESTS)
 
-test-cov-html:
-    @rm -f coverage.html
-    @EMOJI_COV=1 $(MAKE) test MOCHA_OPTS='--require blanket' REPORTER=html-cov > coverage.html
+test-cov:
+    @rm -rf coverage.html
+    @$(MAKE) test MOCHA_OPTS='--require blanket' REPORTER=html-cov > coverage.html
+    @$(MAKE) test MOCHA_OPTS='--require blanket' REPORTER=travis-cov
     @ls -lh coverage.html
-
-test-cov: test-cov-html
-    @EMOJI_COV=1 $(MAKE) test MOCHA_OPTS='--require blanket' REPORTER=travis-cov
-
-test-all: test test-cov
 
 test-coveralls:
     @$(MAKE) test
     @echo TRAVIS_JOB_ID $(TRAVIS_JOB_ID)
-    -@$(MAKE) test MOCHA_OPTS='--require blanket' REPORTER=mocha-lcov-reporter | ./node_modules/coveralls/bin/coveralls.js
+    @-$(MAKE) test MOCHA_OPTS='--require blanket' REPORTER=mocha-lcov-reporter | ./node_modules/coveralls/bin/coveralls.j
+
+test-all: test test-cov
 
 .PHONY: test

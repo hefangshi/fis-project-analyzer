@@ -6,8 +6,12 @@
     "keywords": ["fis", "dependency", "analyzer"],
     "scripts": {
         "test": "make test-all",
-        "blanket": { "pattern": "/lib/" },
-        "travis-cov": { "threshold": 70 }
+        "blanket": {
+            "pattern": "fis-project-analyzer/lib"
+        },
+        "travis-cov": {
+            "threshold": 70
+        }
     },
     "repository": {
         "type": "git",

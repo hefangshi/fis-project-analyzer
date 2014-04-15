@@ -5,7 +5,7 @@
     "description": "A tool to analyze fis-plus project deps",
     "keywords": ["fis", "dependency", "analyzer"],
     "scripts": {
-        "test": "mocha test/cases --recursive"
+        "test": "make test-all"
     },
     "repository": {
         "type": "git",
@@ -18,6 +18,10 @@
         "fis-kernel" : "2.0.0"
     },
     "devDependencies": {
-        "mocha": "~1.4.0"
+        "mocha": "*",
+        "blanket": "*",
+        "travis-cov": "*",
+        "coveralls": "*",
+        "mocha-lcov-reporter": "*"
     }
 }

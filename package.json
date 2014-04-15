@@ -1,10 +1,18 @@
 {
     "name": "fis-project-analyzer",
-    "version": "0.0.11",
+    "version": "0.0.12",
     "main": "index.js",
     "description": "A tool to analyze fis-plus project deps",
+    "keywords": ["fis", "dependency", "analyzer"],
     "scripts": {
         "test": "mocha test/cases --recursive"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/hefangshi/fis-project-analyzer.git"
+    },
+    "engines": {
+        "node": ">= 0.8.0"
     },
     "dependencies": {
         "fis-kernel" : "2.0.0"

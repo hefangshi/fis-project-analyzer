@@ -4,6 +4,7 @@ fis-project-analyzer
 A tool to analyze fis-plus project deps
 
 [![Build Status](https://travis-ci.org/hefangshi/fis-project-analyzer.svg?branch=master)](https://travis-ci.org/hefangshi/fis-project-analyzer)
+[![Coverage Status](https://coveralls.io/repos/hefangshi/fis-project-analyzer/badge.png?branch=master)](https://coveralls.io/r/hefangshi/fis-project-analyzer?branch=master)
 [![Code Climate](https://codeclimate.com/github/hefangshi/fis-project-analyzer.png)](https://codeclimate.com/github/hefangshi/fis-project-analyzer)
 
 ## Usage

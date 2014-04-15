@@ -11,8 +11,8 @@ var pageAnalyzer = require("../../lib/pageAnalyzer.js");
 var projectLoader = require("../../lib/projectLoader.js");
 var projectPath = __dirname + "/../testProject";
 var project = new projectLoader(projectPath);
-//var fis = require('fis-kernel');
-//fis.log.level = fis.log.L_ALL;
+var fis = require('fis-kernel');
+fis.log.level = 0;
 var expectPageDeps = {
     "extends": [
         "common:page/layout.tpl"

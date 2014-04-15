@@ -11,7 +11,7 @@ var projectLoader = require("../../lib/projectLoader.js");
 var fis = require('fis-kernel');
 var projectPath = __dirname + "/../testProject";
 var project = new projectLoader(projectPath);
-//fis.log.level = fis.log.L_ALL;
+fis.log.level = 0;
 describe('projectLoader', function(){
     describe('#getConfs()', function(){
         it('should get project confs with namespace', function(){

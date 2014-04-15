@@ -1,0 +1,74 @@
+{
+    "res": {
+        "common:page/layout.tpl": {
+            "uri": "/template/common/page/layout.tpl",
+            "type": "tpl",
+            "extras": {
+                "isPage": true
+            }
+        },
+        "common:static/lib.js": {
+            "uri": "/static/common/lib.js",
+            "type": "js"
+        },
+        "common:static/mod.js": {
+            "uri": "/static/common/mod.js",
+            "type": "js"
+        },
+        "common:widget/calculate/calculate.js": {
+            "uri": "/static/common/widget/calculate/calculate.js",
+            "type": "js"
+        },
+        "common:widget/nav/nav.css": {
+            "uri": "/static/common/widget/nav/nav.css",
+            "type": "css",
+            "pkg": "common:p0"
+        },
+        "common:widget/nav/nav.tpl": {
+            "uri": "common/widget/nav/nav.tpl",
+            "type": "tpl",
+            "deps": [
+                "common:widget/nav/nav.css"
+            ]
+        },
+        "common:widget/sidebar/sidebar.async.js": {
+            "uri": "/static/common/widget/sidebar/sidebar.async.js",
+            "type": "js",
+            "deps": [
+                "common:widget/sidebarbase/sidebarbase.js",
+                "common:widget/calculate/calculate.js"
+            ]
+        },
+        "common:widget/sidebar/sidebar.css": {
+            "uri": "/static/common/widget/sidebar/sidebar.css",
+            "type": "css",
+            "pkg": "common:p0"
+        },
+        "common:widget/sidebar/sidebar.tpl": {
+            "uri": "common/widget/sidebar/sidebar.tpl",
+            "type": "tpl",
+            "extras": {
+                "async": [
+                    "common:widget/sidebar/sidebar.async.js"
+                ]
+            },
+            "deps": [
+                "common:widget/sidebar/sidebar.css"
+            ]
+        },
+        "common:widget/sidebarbase/sidebarbase.js": {
+            "uri": "/static/common/widget/sidebarbase/sidebarbase.js",
+            "type": "js"
+        }
+    },
+    "pkg": {
+        "common:p0": {
+            "uri": "/static/common/pkg/aio.css",
+            "type": "css",
+            "has": [
+                "common:widget/nav/nav.css",
+                "common:widget/sidebar/sidebar.css"
+            ]
+        }
+    }
+}

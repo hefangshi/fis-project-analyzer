@@ -1,0 +1,9 @@
+{
+    "name": "fis-project-analyzer",
+    "version": "0.0.1",
+    "main": "index.js",
+    "test": "mocha test/cases --recursive",
+    "dependencies": {
+        "fis-kernel" : "2.0.0"
+    }
+}

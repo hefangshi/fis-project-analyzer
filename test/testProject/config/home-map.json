@@ -1,0 +1,140 @@
+{
+    "res": {
+        "home:page/index.tpl": {
+            "uri": "/template/home/page/index.tpl",
+            "type": "tpl",
+            "extras": {
+                "isPage": true
+            }
+        },
+        "home:static/index/index.css": {
+            "uri": "/static/home/index/index.css",
+            "type": "css"
+        },
+        "home:static/lib/css/bootstrap-responsive.css": {
+            "uri": "/static/home/lib/css/bootstrap-responsive.css",
+            "type": "css",
+            "pkg": "home:p0"
+        },
+        "home:static/lib/css/bootstrap.css": {
+            "uri": "/static/home/lib/css/bootstrap.css",
+            "type": "css",
+            "pkg": "home:p0"
+        },
+        "home:static/lib/js/ad-lib.js": {
+            "uri": "/static/home/lib/js/ad-lib.js",
+            "type": "js"
+        },
+        "home:static/lib/js/html5.js": {
+            "uri": "/static/home/lib/js/html5.js",
+            "type": "js"
+        },
+        "home:static/lib/js/jquery-1.10.1.js": {
+            "uri": "/static/home/lib/js/jquery-1.10.1.js",
+            "type": "js",
+            "pkg": "home:p1"
+        },
+        "home:widget/ad/ad.js": {
+            "uri": "/static/home/widget/ad/ad.js",
+            "type": "js",
+            "pkg": "home:p1"
+        },
+        "home:widget/ad/ad.tpl": {
+            "uri": "home/widget/ad/ad.tpl",
+            "type": "tpl",
+            "deps": [
+                "home:widget/ad/ad.js"
+            ]
+        },
+        "home:widget/section/docs/commands.tpl": {
+            "uri": "home/widget/section/docs/commands.tpl",
+            "type": "tpl"
+        },
+        "home:widget/section/docs/demo.tpl": {
+            "uri": "home/widget/section/docs/demo.tpl",
+            "type": "tpl"
+        },
+        "home:widget/section/docs/extlang.tpl": {
+            "uri": "home/widget/section/docs/extlang.tpl",
+            "type": "tpl"
+        },
+        "home:widget/section/docs/integrated.tpl": {
+            "uri": "home/widget/section/docs/integrated.tpl",
+            "type": "tpl"
+        },
+        "home:widget/section/docs/intro.tpl": {
+            "uri": "home/widget/section/docs/intro.tpl",
+            "type": "tpl"
+        },
+        "home:widget/section/docs/quickstart.tpl": {
+            "uri": "home/widget/section/docs/quickstart.tpl",
+            "type": "tpl"
+        },
+        "home:widget/section/docs/srms.tpl": {
+            "uri": "home/widget/section/docs/srms.tpl",
+            "type": "tpl"
+        },
+        "home:widget/section/section.css": {
+            "uri": "/static/home/widget/section/section.css",
+            "type": "css",
+            "pkg": "home:p0"
+        },
+        "home:widget/section/section.tpl": {
+            "uri": "home/widget/section/section.tpl",
+            "type": "tpl",
+            "deps": [
+                "home:widget/section/section.css"
+            ]
+        },
+        "home:widget/slogan/slogan.css": {
+            "uri": "/static/home/widget/slogan/slogan.css",
+            "type": "css",
+            "deps": [
+                "home:widget/section/section.css"
+            ],
+            "pkg": "home:p0"
+        },
+        "home:widget/slogan/slogan.js": {
+            "uri": "/static/home/widget/slogan/slogan.js",
+            "type": "js",
+            "deps": [
+                "common:widget/sidebarbase/sidebarbase.js",
+                "home:widget/slogan/slogan.css"
+            ],
+            "pkg": "home:p1"
+        },
+        "home:widget/slogan/slogan.tpl": {
+            "uri": "home/widget/slogan/slogan.tpl",
+            "type": "tpl",
+            "deps": [
+                "home:widget/slogan/slogan.js",
+                "home:widget/slogan/slogan.css"
+            ]
+        }
+    },
+    "pkg": {
+        "home:p0": {
+            "uri": "/static/home/pkg/aio.css",
+            "type": "css",
+            "has": [
+                "home:static/lib/css/bootstrap.css",
+                "home:static/lib/css/bootstrap-responsive.css",
+                "home:widget/section/section.css",
+                "home:widget/slogan/slogan.css"
+            ]
+        },
+        "home:p1": {
+            "uri": "/static/home/pkg/aio.js",
+            "type": "js",
+            "has": [
+                "home:static/lib/js/jquery-1.10.1.js",
+                "home:widget/ad/ad.js",
+                "home:widget/slogan/slogan.js"
+            ],
+            "deps": [
+                "common:widget/sidebarbase/sidebarbase.js",
+                "home:widget/slogan/slogan.css"
+            ]
+        }
+    }
+}

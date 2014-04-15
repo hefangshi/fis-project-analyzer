@@ -1,7 +1,8 @@
 {
     "name": "fis-project-analyzer",
-    "version": "0.0.6",
+    "version": "0.0.11",
     "main": "index.js",
+    "description": "A tool to analyze fis-plus project deps",
     "scripts": {
         "test": "mocha test/cases --recursive"
     },

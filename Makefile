@@ -1,7 +1,7 @@
-TESTS = test/cases
+TESTS = test/cases/*.js
 TESTTIMEOUT = 1000
 REPORTER = spec
-MOCHA_OPTS = --recursive
+MOCHA_OPTS = 
 
 install:
     @npm install --registry=http://registry.cnpmjs.org

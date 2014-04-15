@@ -1,4 +1,5 @@
-#fis-project-analyzer
+A tool to analyze fis-plus project deps
+===
 
 [![Build Status](https://travis-ci.org/hefangshi/fis-project-analyzer.svg?branch=master)](https://travis-ci.org/hefangshi/fis-project-analyzer)
 

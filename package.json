@@ -1,6 +1,6 @@
 {
     "name": "fis-project-analyzer",
-    "version": "0.0.1",
+    "version": "0.0.3",
     "main": "index.js",
     "scripts": {
         "test": "mocha test/cases --recursive"

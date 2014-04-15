@@ -7,5 +7,8 @@
     },
     "dependencies": {
         "fis-kernel" : "2.0.0"
+    },
+    "devDependencies": {
+        "mocha": "~1.4.0"
     }
 }

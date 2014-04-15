@@ -5,7 +5,9 @@
     "description": "A tool to analyze fis-plus project deps",
     "keywords": ["fis", "dependency", "analyzer"],
     "scripts": {
-        "test": "make test-all"
+        "test": "make test-all",
+        "blanket": { "pattern": "/lib/" },
+        "travis-cov": { "threshold": 70 }
     },
     "repository": {
         "type": "git",

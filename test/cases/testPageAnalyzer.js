@@ -11,7 +11,7 @@ var pageAnalyzer = require("../../lib/pageAnalyzer.js");
 var projectLoader = require("../../lib/projectLoader.js");
 var projectPath = __dirname + "/../testProject";
 var project = new projectLoader(projectPath);
-var fis = require('fis-kernel');
+//var fis = require('fis-kernel');
 //fis.log.level = fis.log.L_ALL;
 var expectPageDeps = {
     "extends": [
@@ -90,11 +90,11 @@ var expectPkgMap = {
 };
 
 describe('pageAnalyzer', function(){
-    describe('#analyzeTplByContent(content,exclude)', function(){
+    describe('#getCurrentDepsByContent(content,exclude)', function(){
         it("should correctly analyze widget item", function(){
             var testTpl = "{%require name='home:static/index/index.css'%}{%widget \r\n name='home:widget/section/section.tpl'%}{%widget \r\n name='common:widget/nav/nav.tpl' cc=1%}{%widget bb=2 name='home:widget/slogan/slogan.tpl'%}";
             var analyzer = new pageAnalyzer(project);
-            var result = analyzer.analyzeTplByContent(testTpl);
+            var result = analyzer.getCurrentDepsByContent(testTpl);
             assert.equal(result['widget'].length, 3);
             assert.equal(result['require'].length, 1);
             assert.equal(result['require'][0], 'home:static/index/index.css');
@@ -102,42 +102,42 @@ describe('pageAnalyzer', function(){
         it("should translate extends path to uri", function(){
             var testTpl = "{%extends file='common/page/layout.tpl'%}";
             var analyzer = new pageAnalyzer(project);
-            var result = analyzer.analyzeTplByContent(testTpl);
+            var result = analyzer.getCurrentDepsByContent(testTpl);
             assert.equal(result['extends'].length, 1);
             assert.equal(result['extends'][0], 'common:page/layout.tpl');
         });
         it("should correctly exclude item with single id", function(){
             var analyzer = new pageAnalyzer(project);
-            var result = analyzer.analyzeTplByContent("{%widget name='common:widget/nav/nav.tpl'%}",'common:widget/nav/nav.tpl');
+            var result = analyzer.getCurrentDepsByContent("{%widget name='common:widget/nav/nav.tpl'%}",'common:widget/nav/nav.tpl');
             assert.equal(result['widget'].length, 0);
         });
         it("should correctly exclude item with idArray", function(){
             var testTpl = "{%widget name='home:widget/section/section.tpl'%}{%widget name='common:widget/nav/nav.tpl'%}{%widget name='home:widget/slogan/slogan.tpl'%}";
             var analyzer = new pageAnalyzer(project);
-            var result = analyzer.analyzeTplByContent(testTpl,['common:widget/nav/nav.tpl','home:widget/section/section.tpl']);
+            var result = analyzer.getCurrentDepsByContent(testTpl,['common:widget/nav/nav.tpl','home:widget/section/section.tpl']);
             assert.equal(result['widget'].length, 1);
             assert.equal(result['widget'][0], 'home:widget/slogan/slogan.tpl');
         });
         it("should support whitespace", function(){
             var testTpl = "{% widget name='home:widget/section/section.tpl' %}";
             var analyzer = new pageAnalyzer(project);
-            var result = analyzer.analyzeTplByContent(testTpl,[]);
+            var result = analyzer.getCurrentDepsByContent(testTpl,[]);
             assert.equal(result['widget'][0], 'home:widget/section/section.tpl');
         });
     });
-    describe('#analyzeTpl(path)', function(){
+    describe('#getCurrentDeps(path)', function(){
         it("should get current page's dependencies (not recursive)", function(){
             var analyzer = new pageAnalyzer(project);
             var pages = project.getPages('home');
-            var result = analyzer.analyzeTpl(pages[0]);
+            var result = analyzer.getCurrentDeps(pages[0]);
             assert.deepEqual(result,expectPageDeps);
         });
     });
-    describe('#getDeps(pageConf)', function(){
+    describe('#getRecursiveDeps(pageConf)', function(){
         it('should get right deps', function(){
             var analyzer = new pageAnalyzer(project);
             var pages = project.getPages('home');
-            var result = analyzer.getDeps(pages[0]);
+            var result = analyzer.getRecursiveDeps(pages[0]);
             assert.deepEqual(result,expectRecursiveDeps);
         });
     });

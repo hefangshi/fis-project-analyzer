@@ -1,5 +1,7 @@
 /.idea
 node_modules/
+test/output
+test\output
 
 .DS_Store
 *.db
@@ -11,3 +13,4 @@ node_modules/
 upload.py
 run.js
 out.log
+coverage.html

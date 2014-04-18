@@ -61,11 +61,18 @@ describe('projectLoader', function(){
             assert.equal(project.getResourceByUri(uri), config);
         });
     });
+    describe('#getResourceByHash(hash)', function(){
+        it('should get right conf by hash', function(){
+            assert.equal(project.getResourceByHash('123').hash, '123');
+        });
+    });
     describe('#getPackage()', function(){
         it('should get package conf', function(){
             assert.deepEqual(project.getPackage("home:p0"), {
                 "uri": "/static/home/pkg/aio.css",
                 "type": "css",
+                "id": "home:p0",
+                "path":  fis.util.realpath(projectPath + "/static/home/pkg/aio.css"),
                 "has": [
                     "home:static/lib/css/bootstrap.css",
                     "home:static/lib/css/bootstrap-responsive.css",
@@ -76,6 +83,8 @@ describe('projectLoader', function(){
             assert.deepEqual(project.getPackage("common:p0"), {
                 "uri": "/static/common/pkg/aio.css",
                 "type": "css",
+                "id": "common:p0",
+                "path":  fis.util.realpath(projectPath + "/static/common/pkg/aio.css"),
                 "has": [
                     "common:widget/nav/nav.css",
                     "common:widget/sidebar/sidebar.css"

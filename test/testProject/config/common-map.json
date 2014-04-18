@@ -9,7 +9,8 @@
         },
         "common:static/lib.js": {
             "uri": "/static/common/lib.js",
-            "type": "js"
+            "type": "js",
+            "hash": "123"
         },
         "common:static/mod.js": {
             "uri": "/static/common/mod.js",

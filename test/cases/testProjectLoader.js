@@ -51,7 +51,7 @@ describe('projectLoader', function(){
     });
     describe('#projectPath', function(){
         it('should get project project path', function(){
-            assert.equal(project.path, projectPath);
+            assert.equal(project.getProjectPath(), projectPath);
         });
     });
     describe('#getPackage()', function(){

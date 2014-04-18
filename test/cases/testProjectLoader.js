@@ -54,6 +54,13 @@ describe('projectLoader', function(){
             assert.equal(project.getProjectPath(), projectPath);
         });
     });
+    describe('#getResourceByUri(uri)', function(){
+        it('should get right conf by uri', function(){
+            var config = project.getConfs()['home']['home:widget/section/docs/commands.tpl'];
+            var uri = config.uri;
+            assert.equal(project.getResourceByUri(uri), config);
+        });
+    });
     describe('#getPackage()', function(){
         it('should get package conf', function(){
             assert.deepEqual(project.getPackage("home:p0"), {

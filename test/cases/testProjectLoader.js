@@ -49,6 +49,11 @@ describe('projectLoader', function(){
             assert.deepEqual(project.getNamespace(), ['common','home']);
         });
     });
+    describe('#projectPath', function(){
+        it('should get project project path', function(){
+            assert.equal(project.path, projectPath);
+        });
+    });
     describe('#getPackage()', function(){
         it('should get package conf', function(){
             assert.deepEqual(project.getPackage("home:p0"), {

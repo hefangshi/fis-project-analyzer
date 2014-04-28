@@ -1,6 +1,6 @@
 {
     "name": "fis-project-analyzer",
-    "version": "0.0.25",
+    "version": "0.0.27",
     "main": "index.js",
     "description": "A tool to analyze fis-plus project deps",
     "keywords": ["fis", "dependency", "analyzer"],

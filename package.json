@@ -23,7 +23,7 @@
         "node": ">= 0.8.0"
     },
     "dependencies": {
-        "fis-kernel" : "2.0.0"
+        "fis-kernel" : "2.0.19"
     },
     "devDependencies": {
         "mocha": "*",
